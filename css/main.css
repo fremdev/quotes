@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  width: 50%;
+  min-height: 100%;
+  margin: 0 auto -80px;
+}
+
+.wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .wrap:after {
+  height: 80px;
+}
+
+.quote-block {
+  padding-top: 30%;
+}
+
+.quote {
+  font-size: 18px;
+}
+
+.author {
+  text-align: right;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+}
