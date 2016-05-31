@@ -1,29 +1,46 @@
 $(document).ready(function() {
 
-  var quoteText;
-
-  function getQuote() {
+  function showQuote() {
     $.getJSON("https://wisdomapi.herokuapp.com/v1/random?callback=?", function(json) {
-      quoteText = json.content;
-      var authorHtml = json.author.name;
-      var authorTwitter = json.author.twitter_username;
-      if (authorTwitter) {
-        authorHtml += '(<a class="author-twitter" href="https://twitter.com/' + authorTwitter + '" target="_blank">@' + authorTwitter + '</a>)';
-      }
+      var quoteText = json.content;
+      var authorFullName = json.author.name;
+      var authorCompany = json.author.company;
+      var authorTwitter = json.author.twitter_username;      
 
       $(".quote").text(quoteText);
-      $(".author").html(authorHtml);
-      $(".author-company").text(json.author.company);
-
+      $(".author").text(authorFullName);
+      addAuthorTwitter(authorTwitter, authorFullName);
+      addAuthorCompany(authorCompany);
+      addTweetThis(quoteText);
     });
   }
 
-  function tweetThis(){
-    $("#tweetThis").attr("href","https://twitter.com/intent/tweet?text=" + quoteText + "from");
+  function addTweetThis(quoteText){
+    $("#tweetThis").attr("href","https://twitter.com/intent/tweet?text=" + quoteText + " from ");
    }
 
-  $("#tweetThis").on('click', tweetThis);
+   function getFirstName(fullName) {
+     return fullName.slice(0, fullName.indexOf(" "));
+   }
 
-  getQuote();
-  $("#nextQuote").on("click", getQuote);
+   function addAuthorTwitter(authorTwitter, fullName) {
+     var twitterHtml = "";
+     var name = getFirstName(fullName);
+     if (authorTwitter !== "") {
+       twitterHtml = '<span class="author-twitter">(' + name + ' on Twitter: <a href="https://twitter.com/' + authorTwitter + '" target="_blank">@' + authorTwitter + '</a>)</span>';
+     }
+     $(".author-twitter").html(twitterHtml);
+   }
+
+   function addAuthorCompany(authorCompany) {
+     if (authorCompany) {
+       $(".author-company").text("(" + authorCompany + ")");
+     }
+     else {
+       $(".author-company").text("");
+     }
+   }
+
+  showQuote();
+  $("#nextQuote").on("click", showQuote);
 });
