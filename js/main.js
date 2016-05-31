@@ -1,17 +1,18 @@
 $(document).ready(function() {
 
-  function showQuote() {
+  function getQuote() {
     $.getJSON("https://wisdomapi.herokuapp.com/v1/random?callback=?", function(json) {
       var quoteText = json.content;
       var authorFullName = json.author.name;
       var authorCompany = json.author.company;
-      var authorTwitter = json.author.twitter_username;      
+      var authorTwitter = json.author.twitter_username;
 
       $(".quote").text(quoteText);
       $(".author").text(authorFullName);
       addAuthorTwitter(authorTwitter, authorFullName);
       addAuthorCompany(authorCompany);
       addTweetThis(quoteText);
+
     });
   }
 
@@ -41,6 +42,13 @@ $(document).ready(function() {
      }
    }
 
-  showQuote();
-  $("#nextQuote").on("click", showQuote);
+   function showQuote() {
+     $(".quote-block").fadeOut(700, function() {
+       getQuote();
+     });
+     $(".quote-block").fadeIn(700);
+   }
+
+   showQuote();
+   $("#nextQuote").on("click", showQuote);
 });
