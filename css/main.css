@@ -1,6 +1,7 @@
 body {
-  background-color: #87d286;
+  background-color: #A3D5FF;
   min-width: 225px;
+  font-family: Helvetica, Verdana, sans-serif;
 }
 
 .wrap-page {
@@ -12,7 +13,7 @@ body {
   margin-top: 30%;
   margin-bottom: 15px;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 25px 0px;
 }
 
@@ -23,6 +24,8 @@ h1 {
   display: inline-block;
   border-radius: 5px;
   padding: 5px;
+  background-color: #84B6F4;
+  color: #f6f6f6;
 }
 
 .quote {
@@ -45,8 +48,13 @@ h1 {
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #6F73D2;
+  color: #f6f6f6;
   text-align: center;
+}
+
+.button:hover {
+  background-color: #5F53d2;
 }
 
 .share {
@@ -57,6 +65,11 @@ h1 {
   font-size: 24px;
   text-align: right;
   margin-bottom: 10px;
+  font-style: italic;
+}
+
+.author-company {
+
 }
 
 .author-twitter {
@@ -66,6 +79,7 @@ h1 {
 .copyright {
   text-align: right;
   font-size: 14px;
+  margin-right: 15px;
 }
 
 @media (max-width: 768px) {
