@@ -7,21 +7,22 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div class="wrap">
-      <h1>Startup Quotes</h1>
+    <div class="wrap-page">
       <div class="quote-block">
+        <h1>Startup Quotes</h1>
         <div class="quote">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
         <div class="author">Name Lastname</div>
-        <button type="button" name="button" id="getQuote">Next quote</button>
+        <div class="buttons">
+          <button class="button" id="nextQuote">Next quote <i class="fa fa-angle-double-right" aria-hidden="true"></i> </button>
+          <a class="button share" id="tweetThis" href="#">Share <i class="fa fa-twitter" aria-hidden="true"></i> </a>
+        </div>
+      </div>
+      <div class="copyright">Designed and built by
+        <a href="https://twitter.com/fremdev">@fremdev</a> • 2016
       </div>
     </div>
-    <footer>
-        <div class="copyright">Designed and built by
-          <a href="https://twitter.com/fremdev">@fremdev</a> • 2016
-        </div>
-    </footer>
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
   </body>
