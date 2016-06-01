@@ -17,7 +17,7 @@ $(document).ready(function() {
   }
 
   function addTweetThis(quoteText){
-    $("#tweetThis").attr("href","https://twitter.com/intent/tweet?text=" + quoteText + " from ");
+    $("#tweetThis").attr("href", "https://twitter.com/intent/tweet?&text=" + quoteText + "&url=http://codepen.io/fremdev/full/GqRYrg/");
    }
 
    function getFirstName(fullName) {

@@ -1,7 +1,11 @@
 body {
   background-color: #A3D5FF;
   min-width: 225px;
-  font-family: Helvetica, Verdana, sans-serif;
+  font-family: 'Hind', Helvetica, Verdana, sans-serif;
+}
+
+.head-font {
+  font-family: 'Libre Baskerville', serif;
 }
 
 .wrap-page {
@@ -19,11 +23,11 @@ body {
 
 h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
   border: solid 1px #888;
   display: inline-block;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   background-color: #84B6F4;
   color: #f6f6f6;
 }
@@ -32,6 +36,9 @@ h1 {
   font-size: 26px;
   padding: 10px;
   text-align: left;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
 }
 
 .buttons {
